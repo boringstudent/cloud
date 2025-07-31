@@ -9,7 +9,9 @@ template = """
 <html>
     <head>
         <meta charset="utf-8">
-        <title>{full_path} - xcl2镜像站</title>
+        <title>{full_path} - boring_student </title>
+        <link rel="icon" href="./favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
         <style>
             html, body {{
                 margin: 0;
@@ -155,7 +157,7 @@ def generate_index_html(root_dir):
             dir_size = format_size(get_dir_size(dir_path))
             content += dir_template.format(dir_name=dir_name, size=dir_size)
         for file_name in files:
-            if file_name not in ['index.html', 'info.json', 'info.md','build.py','CNAME','404.html']:
+            if file_name not in ['index.html', 'info.json', 'info.md','build.py','favicon.ico','CNAME','404.html']:
                 file_path = os.path.join(root, file_name)
                 file_size = format_size(os.path.getsize(file_path))
                 content += file_template.format(
